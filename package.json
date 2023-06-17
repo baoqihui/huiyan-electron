@@ -1,0 +1,50 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "author":"huiyan-AI",
+  "description": "chat with AI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "build-w": "electron-builder --config=config.json -w=nsis --x64",
+    "build-w-32": "electron-builder --config=config.json -w=nsis --ia32",
+    "build-w-64": "electron-builder --config=config.json -w=nsis --x64",
+    "build-w-arm64": "electron-builder --config=config.json -w=nsis --arm64",
+    "build-wz": "electron-builder --config=config.json -w=7z --x64",
+    "build-wz-32": "electron-builder --config=config.json -w=7z --ia32",
+    "build-wz-64": "electron-builder --config=config.json -w=7z --x64",
+    "build-wz-arm64": "electron-builder --config=config.json -w=7z --arm64",
+    "build-m": "electron-builder --config=config.json -m",
+    "build-m-arm64": "electron-builder --config=config.json -m --arm64",
+    "build-l": "electron-builder --config=config.json -l=deb --x64",
+    "build-l-32": "electron-builder --config=config.json -l=deb --ia32",
+    "build-l-64": "electron-builder --config=config.json -l=deb --x64",
+    "build-l-arm64": "electron-builder --config=config.json -l=deb --arm64",
+    "build-l-armv7l": "electron-builder --config=config.json -l=deb --armv7l",
+    "build-lr-64": "electron-builder --config=config.json -l=rpm --x64",
+    "build-lp-64": "electron-builder --config=config.json -l=pacman --x64",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {
+    "forge": "./forge.config.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.2.1",
+    "@electron-forge/maker-deb": "^6.2.1",
+    "@electron-forge/maker-dmg": "^6.2.1",
+    "@electron-forge/maker-rpm": "^6.2.1",
+    "@electron-forge/maker-squirrel": "^6.2.1",
+    "@electron-forge/maker-wix": "^6.2.1",
+    "@electron-forge/maker-zip": "^6.2.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "electron": "^25.1.1",
+    "electron-builder": "^24.4.0",
+    "electron-wix-msi": "^5.0.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
