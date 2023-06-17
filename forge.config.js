@@ -39,7 +39,7 @@ module.exports = {
         config: {
           // 配置选项（可选），例如：icon, background, format等
           icon: path.join(__dirname, 'assets', 'background.icns'),
-          name: 'WiseTalk',
+          name: '慧言AI',
           // icon: 'assets/background.icns',
           format: 'ULFO'
         }
