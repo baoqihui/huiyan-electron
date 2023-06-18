@@ -1,6 +1,7 @@
-const {app, Menu, BrowserWindow, ipcMain, session, shell} = require('electron')
+const {app, Menu, BrowserWindow, ipcMain, session, shell, dialog} = require('electron')
 
 const path = require('path');
+
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -49,12 +50,20 @@ function createWindow() {
                 },
                 {
                     label: '联系我们',
-                    click: async () => {
-                        await shell.openExternal('https://www.huiyan-ai.com/qun.html')
+                    click:()=>{
+                        let modal = new BrowserWindow({  modal: true, show: false })
+                        modal.loadURL("https://www.huiyan-ai.com/qun.html")
+                        modal.setMenu(null)
+                        modal.once('ready-to-show', () => {
+                            modal.show()
+                        })
                     }
                 },
                 {
-                    label: '版本号：0.5.5'
+                    label: '版本号：0.5.5',
+                    click: async () => {
+                        await shell.openExternal('https://alist.huiyan-ai.com/final/huiyan')
+                    }
                 }
             ]
         }
